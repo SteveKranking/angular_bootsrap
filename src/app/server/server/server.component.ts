@@ -8,21 +8,23 @@ import { FormsModule } from '@angular/forms';
 })
 export class ServerComponent implements OnInit {
 
-  constructor() { 
-    setTimeout(() => {
-      this.allowNewServer = true;
-    }, 2000);
-  }
-
-  ngOnInit() {
-  }
-
   allowNewServer = false;
   serverCreationStatus = "No server was created";
   serverId = 10;
   serverStatus = "offline";
   serverName = 'TestServer';
   serverCreated = false;
+
+  constructor() { 
+    setTimeout(() => {
+      this.allowNewServer = true;
+    }, 2000);
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+
+  }
+
+  ngOnInit() {
+  }
 
   onCreateServer() {
     this.serverCreationStatus = "Server was created! Name is" + this.serverName;
@@ -31,6 +33,10 @@ export class ServerComponent implements OnInit {
 
   onUpdateServerName(event: any) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  getColor() {
+    return this.serverStatus === 'online' ? 'green' : 'red';
   }
 
 }

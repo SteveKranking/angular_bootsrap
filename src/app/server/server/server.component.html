@@ -15,4 +15,4 @@
     <p> No server was created </p>
 </ng-template>
 
-<p>Server with ID {{ serverId }} is {{serverStatus}}</p>
+<p [ngStyle]="{backgroundColor: getColor()}">Server ID is {{ serverId }} </p>
