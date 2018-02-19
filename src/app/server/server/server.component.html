@@ -16,3 +16,8 @@
 </ng-template>
 
 <p [ngStyle]="{backgroundColor: getColor()}">Server ID is {{ serverId }} </p>
+
+<hr>
+<div *ngFor="let server of servers"> 
+  <p> {{server}} </p>
+</div>
