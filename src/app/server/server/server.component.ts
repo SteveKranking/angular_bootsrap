@@ -22,9 +22,11 @@ export class ServerComponent implements OnInit {
   serverId = 10;
   serverStatus = "offline";
   serverName = 'TestServer';
+  serverCreated = false;
 
   onCreateServer() {
-    this.serverCreationStatus = "Server was created!";
+    this.serverCreationStatus = "Server was created! Name is" + this.serverName;
+    this.serverCreated = true;
   }
 
   onUpdateServerName(event: any) {

@@ -9,8 +9,6 @@
 (click)="onCreateServer()"> Add Server </button>
 
 <hr>
-<p> {{serverName}} </p>
-
-<hr>
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated === true"> Server was created, server name is  {{ serverName }} </p>
 <p>Server with ID {{ serverId }} is {{serverStatus}}</p>
